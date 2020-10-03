@@ -1,0 +1,262 @@
+<div class="page">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-3 mt-3" style="background-color: rgba(250, 250, 250, 0.75);">
+
+          <div class="card-body" style="text-align: center;">
+
+            <h1>Exploration des Terres de Lyon Levant</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="dDay">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header" style="display: flex;" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="reglesJeuCollapse">
+            <h2 class="card-title" style="min-width: 300px; margin: 0px;"><img src="assets/images/compass.svg"
+                style="height: 1.5em;"> Règles de l'exploration</h2>
+
+            <div class="card-options">
+
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
+
+            </div>
+          </div>
+
+          <div class="card-body" id="reglesJeuCollapse" [ngbCollapse]="isCollapsed">
+
+            <p class="card-text">Nos trois chefs d'expédition Jean Barque, Ola Venture et Laura Ziss approchent du but !</p>
+
+            <p class="card-text">Ils ont bientôt atteint les <b>Cités d'Or</b>, le but de leur expédition. Mais avant de s'installer ils ont besoin de vous pour cartographier
+              et découvrir tout ce qui se trouve sur leurs trois Terres : la <b>Terre des Canuts</b>, la <b>Terre des Lumières</b> et la <b>Terre des Gones</b>.
+            </p>
+
+            <p class="card-text">Chaque équipe d'exploration a reçu le <b>carnet de découvertes</b> que vous retrouverez ci-après. Votre mission est la suivante : vous devez trouver
+              les situations décrites, les <b>prendre en photo</b> et les envoyer à votre chef d'expédition. <br>
+              Mais attention ! Consultez régulièrement cette page, votre chemin sera semé d'embûches et des <b>événements</b> pourront survenir !
+            </p>
+
+            <p class="card-text">Mais avant toute chose, trouvez-vous un <b>nom d'équipe</b> qui comprend le nom de votre groupe et au moins un adjectif.</p>
+
+            <p class="card-text">Bonne chance, et bon courage !</p>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="!dDay">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header" style="display: flex;">
+            <h2 class="card-title" style="min-width: 300px; margin: 0px;"><img src="assets/images/compass.svg"
+                style="height: 1.5em;"> Veillez patienter un peu...</h2>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-text">Nos trois aventuriers sont en train d'explorer les Terres de Lyon Levant.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3" *ngIf="checkCardTigre()">
+      <div class="col-12">
+
+        <div class="card text-danger border-danger">
+          <div class="card-header">
+            <h2 class="card-title" style="min-width: 300px; margin: 0px;"><img src="assets/images/tiger.svg"
+                style="height: 1.5em;"> Un tigre vous attaque !</h2>
+          </div>
+
+          <div class="card-body">
+
+            <b class="card-text">Vite !! Comment vous défendez-vous ?</b>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row mt-3" *ngIf="checkCardEvent2()">
+      <div class="col-12">
+
+        <div class="card text-danger border-danger">
+          <div class="card-header">
+            <h2 class="card-title" style="min-width: 300px; margin: 0px;"><img src="assets/images/tiger.svg"
+                style="height: 1.5em;"> Un tigre vous attaque !</h2>
+          </div>
+
+          <div class="card-body">
+
+            <b class="card-text">Vite !! Comment vous défendez-vous ?</b>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="row mt-3" *ngIf="dDay">
+      <div class="col-12">
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title" style="min-width: 300px; margin: 0px;"><img src="assets/images/book.svg"
+                style="height: 1.5em;"> Carnet de découvertes</h2>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-text">Trouvez les situations décrites ci-après, prenez-les en photo et envoyez-les à votre chef d'expédition via WhatsApp en cliquant ici :
+              <a href="https://wa.me/330649787109?text=Nom%20d%27%C3%A9quipe%20%3A%0ANum%C3%A9ro%20de%20d%C3%A9fi%20%3A%20"><img src="assets/images/whatsapp.svg" class="" style="height: 2em;"></a>
+              <!--<a href="whatsapp://send?phone=330649787109text=textesousformedurl"><img src="assets/images/whatsapp.svg" class="" style="height: 2em;"></a>-->
+            </p>
+
+
+            <p class="card-text">Si tu n'as pas Whatsapp tu peux lui envoyer les photos par MMS à ce numéro : <a href="tel:0649787109">0649787109</a></p>
+
+            <p class="card-text"><b>Attention à bien préciser le nom d'équipe et le numéro de défi !</b></p>
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> Numéro</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="item">
+                <th mat-header-cell *matHeaderCellDef> Item </th>
+                <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="points">
+                <th mat-header-cell *matHeaderCellDef> Points </th>
+                <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="card mb-3 mt-3" style="background-color: rgba(250, 250, 250, 0.75);">
+
+          <div class="card-body progress-wrapper">
+
+            <img src="assets/images/camping.svg" class="progress-img-left" style="height: 3em;">
+
+
+
+            <ngb-progressbar class="progress-line" type="success" [value]="percentExplorer" [striped]="true"
+              [animated]="true">
+              <img src="assets/images/farmers.svg" class="progress-explorer" style="height: 3em;"
+                [style.left]="percentExplorerCss">
+            </ngb-progressbar>
+
+            <img src="assets/images/temple.svg" class="progress-img-right" style="height: 3em;">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row mt-3 mb-3"><!--</div> *ngIf="percentExplorer >= 100">-->
+      <div class="col-12">
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title" style="min-width: 300px; margin: 0px;"><img src="assets/images/temple.svg"
+                style="height: 1.5em;"> Cités d'or découvertes !</h2>
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-text">Les chefs d'expédition ont trouvé les <b>Cités d'Or</b> ! Choisis le nom de ton groupe pour rejoindre les autres équipes de ta <b>Terre</b> !</p>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="form-label">Groupe</label>
+
+
+                  <select class="custom-select" [(ngModel)]="groupe" (change)="selectGroupe()">
+                    <option value="1">Saint Vincent de Croix-Rousse</option>
+                    <option value="2">Saint Nom de Jésus</option>
+                    <option value="3">Saint Eucher</option>
+                    <option value="4">Immaculée Conception Saint Sacrement</option>
+                    <option value="5">Saint Joseph des Brotteaux</option>
+                    <option value="6">Saint Pothin</option>
+                    <option value="7">Quatre Châteaux</option>
+                    <option value="8">Saint Priest</option>
+                    <option value="9">La Guillotière</option>
+                    <option value="10">Presqu'île</option>
+                    <option value="11">Gandhi</option>
+                    <option value="12">Bron</option>
+                    <option value="13">La Nativité</option>
+                    <option value="14">Montchat</option>
+                    <option value="15">Wangari Mathai</option>
+                    <option value="16">Charpennes</option>
+                    <option value="17">Genas Chassieu</option>
+                    <option value="18">Meyzieu</option>
+                    <option value="19">Sacré-Coeur</option>
+                  </select>
+
+                </div>
+              </div>
+              <div class="col-md-9">
+                <p class="card-text" *ngIf="terre == 'gones'">Bienvenue en <b>Terre des Gones</b> ! <br><br>
+                Rejoins nous vite en suivant ce lien sur un ordinateur équipé d'une webcam à partir de 18h : <a href="https://icebreaker.video/events/zOqe4eVpE0VtIyXlSPvn">ScoutRoulette</a></p>
+                <p class="card-text" *ngIf="terre == 'canuts'">Bienvenue en <b>Terre des Canuts</b> ! <br><br>
+                Rejoins nous vite en suivant ce lien sur un ordinateur équipé d'une webcam à partir de 18h : <a href="https://icebreaker.video/events/Ky7ly9sYjR5GNsb4dPFs">ScoutRoulette</a></p>
+                <p class="card-text" *ngIf="terre == 'lumieres'">Bienvenue en <b>Terre des Lumières</b> ! <br><br>
+                Rejoins nous vite en suivant ce lien sur un ordinateur équipé d'une webcam à partir de 18h : <a href="https://icebreaker.video/events/vWMCYNZEFziDO3iyQxpn">ScoutRoulette</a></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

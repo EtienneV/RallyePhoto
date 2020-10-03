@@ -1,0 +1,54 @@
+
+
+h1 {
+  font-family: 'Bangers', cursive;
+  font-size: 3em;
+}
+
+
+h2 {
+  font-family: 'Bangers', cursive;
+}
+
+.container {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+table {
+  width: 100%;
+}
+
+.card-options {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.progress-wrapper {
+  display: flex;
+}
+
+.progress-line {
+  width: 100%;
+  top: 20px;
+  position: relative;
+}
+
+.progress-img-left {
+  right: -10px;
+  position: relative;
+  z-index: 3;
+}
+
+.progress-img-right {
+  left: -10px;
+  position: relative;
+}
+
+.progress-explorer {
+  height: 3em;
+  position: absolute;
+  z-index: 5;
+  left: 25%;
+}
