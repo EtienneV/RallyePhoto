@@ -162,6 +162,18 @@
                 <td mat-cell *matCellDef="let element"> {{element.points}} </td>
               </ng-container>
 
+              <!-- Comment Column -->
+              <ng-container matColumnDef="comment">
+                <th mat-header-cell *matHeaderCellDef> Commentaire </th>
+                <td mat-cell *matCellDef="let element">
+                  <input type="text" 
+                         class="form-control form-control-sm" 
+                         [(ngModel)]="element.comment" 
+                         (blur)="updateComment(element, element.comment)"
+                         placeholder="Ajouter un commentaire...">
+                </td>
+              </ng-container>
+
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
