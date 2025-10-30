@@ -4,6 +4,7 @@ export interface PeriodicElement {
   id: number;
   item: string;
   points: number;
+  comment?: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -55,7 +56,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class AppComponent implements OnInit {
   title = 'RallyePhoto';
 
-  displayedColumns: string[] = ['id', 'item', 'points'];
+  displayedColumns: string[] = ['id', 'item', 'points', 'comment'];
   dataSource = ELEMENT_DATA;
 
   public isCollapsed = false;
@@ -74,6 +75,9 @@ export class AppComponent implements OnInit {
     for(let i = 0; i < this.dataSource.length; i++) {
       this.dataSource[i].id = i+1;
     }
+
+    // Load comments from localStorage
+    this.loadComments();
 
     setInterval(function(){
       var start = new Date("2020-10-03T17:00:00");
@@ -132,6 +136,32 @@ export class AppComponent implements OnInit {
     }
   }
 
+  public updateComment(element: PeriodicElement, comment: string): void {
+    element.comment = comment;
+    this.saveComments();
+  }
+
+  private saveComments(): void {
+    const comments = {};
+    this.dataSource.forEach(element => {
+      if (element.comment) {
+        comments[element.id] = element.comment;
+      }
+    });
+    localStorage.setItem('rallyePhotoComments', JSON.stringify(comments));
+  }
+
+  private loadComments(): void {
+    const savedComments = localStorage.getItem('rallyePhotoComments');
+    if (savedComments) {
+      const comments = JSON.parse(savedComments);
+      this.dataSource.forEach(element => {
+        if (comments[element.id]) {
+          element.comment = comments[element.id];
+        }
+      });
+    }
+  }
 
 }
 
